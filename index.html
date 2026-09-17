@@ -4,11 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Jose Junior">
+    <meta name="description" content="Aplicação web responsiva para gerenciamento e organização de notas.">
+
     <title>Quick Notes</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- Javascript -->
+    <script src="./js/app.js" defer></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
+    <header class="header">
+        <h1 class="header__title">Quick Notes</h1>
 
+        <div class="header__actions">
+            <button id="btn-filter-favorites" class="btn btn--icon btn--favorite" type="button" aria-label="Filtrar favoritos">
+                <i data-lucide="star"></i>
+            </button>
+
+            <button id="btn-toggle-theme" class="btn btn--icon" type="button" aria-label="Alterar tema">
+                <i data-lucide="sun"></i>
+            </button>
+
+            <button id="btn-add-note" class="btn btn--primary" type="button" aria-label="Adicionar nota">
+                <i data-lucide="plus"></i>
+                <span>Adicionar Nota</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main"></main>
+
+    <dialog id="note-modal" class="modal">
+        <header class="modal__header">
+            <h2 id="note-modal-title" class="modal__title">Adicionar Nova Nota</h2>
+
+            <button id="btn-close-note-modal" class="btn btn--icon" type="button" aria-label="Fechar">
+                <i data-lucide="x"></i>
+            </button>
+        </header>
+        <form id="note-form" class="modal__form" method="dialog">
+            <div class="modal__field">
+                <label for="note-title">Título</label>
+                <input type="text" name="title" id="note-title" placeholder="Insira o título da nota..." required>
+            </div>
+
+            <div class="modal__field">
+                <label for="note-content">Conteúdo</label>
+                <textarea name="content" id="note-content" placeholder="Escreva sua nota aqui..." required></textarea>
+            </div>
+
+            <div class="modal__actions">
+                <button id="btn-cancel-note" class="btn btn--outline" type="button">Cancelar</button>
+                <button id="btn-save-note" class="btn btn--primary" type="submit">Salvar Nota</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="confirmation-modal" class="confirmation">
+        <header class="confirmation__header">
+            <h2 id="confirmation-title" class="confirmation__title"> Excluir nota?</h2>
+
+            <button id="btn-close-confirmation" class="btn btn--icon" type="button" aria-label="Fechar">
+                <i data-lucide="x"></i>
+            </button>
+        </header>
+
+        <p class="confirmation__text">
+            Tem certeza que deseja excluir esta nota? Essa ação não pode ser desfeita.
+        </p>
+
+        <div class="confirmation__actions">
+            <button id="btn-cancel-delete" class="btn btn--outline" type="button">Cancelar</button>
+            <button id="btn-confirm-delete" class="btn btn--primary" type="button">Excluir</button>
+        </div>
+    </dialog>
+
+    <script>lucide.createIcons();</script>
 </body>
 
 </html>
