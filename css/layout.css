@@ -1,0 +1,117 @@
+/* Header */
+.header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.header__title {
+    font-size: var(--fs-2xl);
+    color: var(--color-text-primary);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* Main */
+.main {
+    flex: 1;
+    width: 100%;
+
+    padding: var(--spacing-md);
+}
+
+.main--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Empty */
+.empty-state {
+    width: 30%;
+    min-width: 30rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+
+    text-align: center;
+}
+
+.empty-state__icon {
+    align-self: center;
+}
+
+.empty-state__icon svg {
+    width: 12rem;
+    height: 12rem;
+    color: var(--color-primary);
+}
+
+.empty-state__title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+}
+
+.empty-state__text {
+    width: 40ch;
+    font-size: var(--fs-lg);
+    color: var(--color-text-muted);
+}
+
+/* Notes */
+.notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: var(--content-gap);
+}
+
+/* Note */
+.note {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+
+    padding: var(--spacing-lg) var(--spacing-md);
+
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.note__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.note__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: var(--fs-xl);
+}
+
+.note__text {
+    font-size: var(--fs-md);
+    color: var(--color-text-secondary);
+}
+
+.note__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
